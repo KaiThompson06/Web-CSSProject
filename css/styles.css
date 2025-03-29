@@ -1,0 +1,12 @@
+/* since I am unsure about color scheme, I will use variables to hold colors*/
+:root {
+    --primary: #772486;
+    --secondary: #862462;
+    --accent: #FFD700;
+    --background: #150018;
+    --text: #fcedff;
+
+}
+html {
+    scroll-behavior: smooth;
+}
