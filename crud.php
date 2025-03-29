@@ -11,9 +11,14 @@ class crud extends database
     {
 
     }
-    public function read()
+    public function read($query)
     {
-
+        $result = $this->conn->query($query);
+        if($result->num_rows > 0)
+        {
+            return $result;
+        }
+        return false;
     }
     public function update()
     {
