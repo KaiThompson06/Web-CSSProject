@@ -1,12 +1,773 @@
+
 /* since I am unsure about color scheme, I will use variables to hold colors*/
 :root {
     --primary: #772486;
-    --secondary: #862462;
+    --secondary: #F6F2EA;
     --accent: #FFD700;
-    --background: #150018;
+    --background: #4B1D6A;
     --text: #fcedff;
-
 }
+
+
 html {
     scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+body {
+    background-color: #4B1D6A;
+    padding: 0;
+    margin: 0;
+}
+main {
+    min-height: 80vh;
+    background-color: #F6F2EA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+.basic {
+    display: block;
+    text-align: left;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+main > h1, main > h2, main > h3, main > h4, main > h5, main > h6 {
+    font-family: 'DM Serif Text', sans-serif;
+}
+
+main > form > input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 30px;
+    background-color: #4B1D6A;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+main > form > input::placeholder {
+    color: white;
+}
+main > form > label
+{
+    padding: 5px;
+    font-size: 30px;
+    background-color: #4B1D6A;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+main > form {
+    margin: 10px 0;
+}
+main > form > a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+
+}
+
+main > a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4B1D6A;
+}
+
+header {
+    background-color: #4B1D6A;
+    color: var(--text);
+    width: 100%;
+    margin-bottom: 0;
+    padding: 1%;
+    min-height: 12.5vh;
+    box-sizing: border-box;
+}
+
+header > h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 48px;
+    font-weight: 100;
+}
+header > h1 > a {
+    color: white;
+    text-decoration: none;
+}
+header > nav > menu
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+header > nav > menu > li {
+    list-style: none;
+    padding: 5px 10px 5px;
+    border-radius: 15px 15px 0 0;
+    font-size: 30px;
+}
+
+header nav menu li:nth-child(2) {
+    flex-grow: 1;
+}
+
+
+header input {
+    border: none;
+    outline: none;
+    margin-left: 32px;
+    width: 200px;
+    font-size: 30px;
+}
+
+
+
+header input::placeholder {
+    color: var(--background);
+    font-size: 30px;
+    margin: 0;
+}
+
+header nav menu li a {
+    color: var(--text);
+    text-decoration: none;
+}
+@media screen and (max-width: 1000px)
+{
+    header > h1 {
+        position: static;
+        width: 100%;
+        transform: none !important;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    header nav menu li:nth-child(2) {
+        flex-grow: 0;
+    }
+    header > nav > menu
+    {
+        justify-content: space-evenly;
+    }
+
+    .masthead > p
+    {
+        display: none;
+    }
+}
+
+.mobile-nav label span
+{
+    display: block;
+    width: 50px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    position: relative;
+    z-index: 1;
+    transition: all .5s;
+}
+
+.mobile-nav input:checked + label span {
+    opacity: 0;
+}
+.mobile-nav input:checked + label span:nth-child(1) {
+    opacity: 1;
+    transform: rotate(45deg) translateY(20px);
+}
+.mobile-nav input:checked + label span:nth-child(3) {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(-20px);
+}
+
+.mobile-nav
+{
+    display: none;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding-left: 20%;
+}
+.mobile-nav menu {
+    display: block;
+    position: absolute;
+    background-color: #4B1D6A;
+    left: 0;
+    transition: all 1s;
+    margin-top: -400px;
+}
+.mobile-nav input:checked ~ menu
+{
+    display: block;
+    margin-top: 0;
+    width: 100%;
+}
+@media screen and (max-width: 800px)
+{
+    .desktop-nav {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+    }
+
+
+
+}
+
+
+.masthead {
+    z-index: 1;
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../images/masthead.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 87.5vh;
+    width: 100%;
+}
+
+.masthead h2 {
+    padding: 15% 0 0 1.5%;
+    font-weight: 200;
+    font-family: 'DM Serif Text', sans-serif;
+    font-size: 72px;
+    color: white;
+    letter-spacing: 2px;
+    width: 35%;
+    margin: 0;
+    text-shadow: rgba(0, 0, 0, .2) 2px 2px 1px;
+
+
+}
+.masthead p {
+    padding: 0 0 0 1.5%;
+    font-weight: 200;
+    font-family: 'DM Serif Text', sans-serif;
+    font-size: 36px;
+    color: white;
+    width: 50%;
+    margin: 0;
+    text-shadow: rgba(0, 0, 0, .2) 2px 2px 1px;
+}
+.masthead svg {
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    animation: 1s;
+}
+.masthead svg line {
+    fill: none;
+    stroke: #F6F2EA;
+    stroke-width: 5px;
+    stroke-dasharray: 200;
+    stroke-linecap: round;
+    animation: down-indicate-animation 4s infinite;
+
+}
+
+
+@keyframes down-indicate-animation
+{
+    0% { stroke-dashoffset: 200; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -200; }
+}
+
+@media screen and (max-width: 800px)
+{
+    .masthead h2 {
+        margin: auto;
+        width: 70%;
+        padding: 45% 0 0 0;
+        text-align: center;
+    }
+    .masthead svg {
+        display: none;
+    }
+}
+
+
+#BestSellers {
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.carrossel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+section h2 {
+    font-size: 36px;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+
+
+#testimonials{
+    color: white;
+    background-color: #4B1D6A;
+}
+
+#testimonials > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#testimonials > h2
+{
+    width: 100%;
+    text-align: center;
+    font-weight: 200;
+}
+
+
+#testimonials > div > *
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    text-align: center;
+    font-family: 'DM Serif Text', sans-serif;
+}
+
+#testimonials > div > div > p, #testimonials > div > div > h4 {
+    font-weight: 200;
+    font-size: 27px;
+}
+
+@media screen and (max-width: 800px)
+{
+    #testimonials > div {
+        flex-direction: column;
+    }
+    #testimonials > div > *
+    {
+        width: 80%;
+    }
+}
+
+.star {
+    width: 3vw;
+    height: 3vw;
+}
+
+.grey {
+    opacity: 50%;
+}
+
+
+
+footer {
+    background-color: #4B1D6A;
+    width: 100%;
+}
+footer > div
+{
+    padding: 2.5% 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    border-top: #360756 solid 5px;
+    border-bottom: #360756 solid 5px;
+}
+footer > h4 {
+    color: #DDD8E3;
+    font-size: 27px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    margin: 5px;
+    padding: 0;
+    font-family: 'DM Serif Text', sans-serif;
+}
+
+
+footer > div > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-family: 'DM Serif Text', sans-serif;
+    font-size: 24px;
+    margin: 5px;
+}
+footer h4 {
+    color: white;
+    font-family: 'DM Serif Text', sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+footer > div > div:last-child {
+    align-items: normal;
+    padding-bottom: 50px;
+}
+footer input {
+    background-color: #B9A8CC;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    padding: 5px;
+
+}
+
+
+
+footer input::placeholder {
+    color: white;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 800px) {
+    footer > div
+    {
+        flex-direction: column;
+        border-bottom: none;
+    }
+    footer > div > div
+    {
+        width: 100%;
+        text-align: center;
+        border-bottom: #360756 solid 5px;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+}
+
+.searchResults
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    background-color: #F6F2EA;
+}
+
+.mobileSearch {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    top: 10vh;
+    box-sizing: border-box;
+
+}
+.mobileSearch > input {
+    width: 100%;
+    background-color: #8a5ea7;
+    box-sizing: border-box;
+
+}
+
+@media screen and (max-width: 800px) {
+    .mobileSearch {
+        display: block;
+    }
+}
+
+
+
+
+.card {
+    padding: 24px 48px;
+    margin: 16px auto;
+    width: 300px;
+    height: auto;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h4 {
+    font-size: 30px;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 100;
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+
+.card figure {
+    display: grid;
+}
+.card img {
+    aspect-ratio: 131 / 200;
+    width: 100%;
+    height: auto;
+    transition: all 0.15s;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.card img:nth-child(1) {
+    margin-left: -25px;
+}
+
+
+.card > figure:hover > img:nth-child(1) {
+    transform: scale(1.05) translate(-15px, -15px) rotate(-5deg);
+}
+.card > figure:hover > img:nth-child(2) {
+    transform: scale(1.05) translate(15px, -15px) rotate(5deg);
+}
+
+
+.card > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card > div > div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.card p {
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+.card > div > p {
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-family: 'DM Serif Text', sans-serif;
+    font-size: 20px;
+}
+.card > div > a {
+    border: #D4AF37 1px solid;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    color: black;
+    background-color: #F6F2EA;
+    font-family: 'Inter', sans-serif;
+}
+@media screen and (max-width: 800px) {
+    .card {
+        padding: 24px 0;
+        margin: 16px auto;
+    }
+}
+
+
+
+.product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.product figure {
+    display: grid;
+}
+.product img {
+    aspect-ratio: 131 / 200;
+    height: 50vh;
+    width: auto;
+    transition: all 0.15s;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+.product img:hover {
+    transform: scale(1.05) translate(-15px, -15px);
+}
+
+.product img:nth-child(1) {
+    margin-left: -50px;
+}
+
+.product h4 {
+    font-size: 40px;
+    font-family: 'DM Serif Text', sans-serif;
+    font-weight: 100;
+    color: black;
+}
+.product p {
+    font-size: 30px;
+}
+.product input {
+    background-color: #4B1D6A;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 25px;
+    padding: 7.5px;
+    cursor: pointer;
+}
+
+.error {
+    color: black;
+    font-size: 36px;
+    padding: 15% 0;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+
+
+/*Login Form*/
+#logInPage
+{
+    color: white;
+    background-color: #4B1D6A;
+    padding-bottom: 40px;
+}
+#logInPage > h1
+{
+    text-align: center;
+    font-family: 'DM Serif Text', sans-serif;
+    font-weight: 200;
+}
+#logInPage > div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+#logInPage > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 5%;
+    margin: 1%;
+    background-color: #5a2b80;
+}
+
+#logInPage > div > div > h2{
+    margin-bottom: 0;
+}
+#logInPage form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#logInPage form > * {
+    margin: 5% 0;
+}
+#logInPage > a
+{
+    text-align: center;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    margin: .5% 0;
+}
+
+#logInPage input {
+    font-size: 30px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #F6F2EA;
+    color: black;
+}
+#logInPage input::placeholder {
+    color: black;
+    opacity: 50%;
+}
+#logInPage input[type='submit']
+{
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    background-color: #F6F2EA;
+    color: black;
+    cursor: pointer;
+}
+
+.profileImage {
+    width: 50%;
+    height: auto;
+    clip-path: circle(40%);
+    margin: 5% 0;
+}
+
+#adminPage form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#adminPage form > label {
+    text-align: left;
+    background-color: transparent;
+    color: black;
+}
+#adminPage form > input {
+    font-size: 30px;
+    margin-bottom: 5%;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.hidden {
+    display: none;
 }

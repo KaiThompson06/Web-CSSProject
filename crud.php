@@ -7,26 +7,39 @@ class crud extends database
         parent::__construct();
     }
 
-    public function create()
-    {
-
-    }
-    public function read($query)
+    public function create($query)
     {
         $result = $this->conn->query($query);
-        if($result->num_rows > 0)
-        {
-            return $result;
+        if ($result === true) {
+            return true;
         }
         return false;
     }
-    public function update()
-    {
 
+    public function read($query)
+    {
+        $result = $this->conn->query($query);
+        if ($result && $result->num_rows > 0) {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+        return false;
     }
-    public function delete()
-    {
 
+    public function update($query)
+    {
+        $result = $this->conn->query($query);
+        if ($result === true) {
+            return true;
+        }
+        return false;
+    }
+    public function delete($query)
+    {
+        $result = $this->conn->query($query);
+        if ($result === true) {
+            return true;
+        }
+        return false;
     }
     public function escape($string)
     {
