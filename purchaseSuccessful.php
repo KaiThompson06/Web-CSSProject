@@ -1,0 +1,18 @@
+
+<?php
+$title = "Thank You";
+$description = "A screen for a successful checkout";
+require './templates/header.php';
+?>
+
+<main>
+    <h2>Thank You For your purchase</h2>
+
+    <p> We appreciate your business! </p>
+
+</main>
+
+
+<?php
+require './templates/footer.php';
+?>

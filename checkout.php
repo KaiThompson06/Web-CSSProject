@@ -12,11 +12,8 @@ foreach($_SESSION['cardsInCart'] as $value)
 }
 
 $_SESSION['cardsInCart'] = array();
-header('location: cart.php');
+header('location: purchaseSuccessful.php');
 }
-
-
-
 
 
 $title = "Checkout";

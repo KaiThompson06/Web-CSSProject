@@ -145,7 +145,7 @@ header nav menu li a {
     color: var(--text);
     text-decoration: none;
 }
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 1200px)
 {
     header > h1 {
         position: static;
@@ -638,6 +638,12 @@ footer input::placeholder {
     font-size: 25px;
     padding: 7.5px;
     cursor: pointer;
+    margin-bottom: 45px;
+}
+@media screen and (max-width: 800px) {
+    .product {
+        flex-direction: column;
+    }
 }
 
 .error {
