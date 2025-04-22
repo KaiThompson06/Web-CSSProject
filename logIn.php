@@ -37,7 +37,7 @@ if (isset($_POST['username']))
     }
     else
     {
-        echo "<p>Wrong username or password!</p>";
+        echo "<p class='error'>Wrong username or password!</p>";
     }
 }
 ?>

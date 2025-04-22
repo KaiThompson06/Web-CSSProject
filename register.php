@@ -30,11 +30,12 @@ if (isset($_POST['username']))
         $auth->addEmailToUser($username, $email);
         $_SESSION['username'] = $username;
         $_SESSION['admin'] = false;
+
         header("Location: ./profile.php");
     }
     else
     {
-        echo "<p>Error creating account!</p>";
+        echo "<div class='error'><h2>Error creating account!</h2><p>Ensure the password is at least 8 characters long and only alphabetical letters.</p> <p>Ensure the username is only alphabetical letters.</p> <p>Ensure that the email is formatted correctly.</p> </div>";
     }
 
 }

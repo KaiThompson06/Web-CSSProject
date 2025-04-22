@@ -99,6 +99,7 @@ header > h1 {
     font-family: 'Playfair Display', sans-serif;
     font-size: 48px;
     font-weight: 100;
+    z-index: 100;
 }
 header > h1 > a {
     color: white;
@@ -299,7 +300,7 @@ header nav menu li a {
 }
 
 
-#BestSellers {
+#TopCards {
     background-color: var(--secondary);
     display: flex;
     flex-direction: column;
@@ -309,7 +310,7 @@ header nav menu li a {
     flex-wrap: wrap;
 }
 
-.carrossel {
+.card-container {
     display: flex;
     overflow: hidden;
     width: 100%;
@@ -361,6 +362,13 @@ section h2 {
     font-size: 27px;
 }
 
+
+
+.star {
+    width: 3vw;
+    height: 3vw;
+}
+
 @media screen and (max-width: 800px)
 {
     #testimonials > div {
@@ -370,11 +378,10 @@ section h2 {
     {
         width: 80%;
     }
-}
-
-.star {
-    width: 3vw;
-    height: 3vw;
+    .star {
+        width: 9vw;
+        height: 9vw;
+    }
 }
 
 .grey {
@@ -474,6 +481,7 @@ footer input::placeholder {
     gap: 20px;
     justify-content: center;
     background-color: #F6F2EA;
+    width: 100%;
 }
 
 .mobileSearch {
@@ -634,13 +642,19 @@ footer input::placeholder {
 
 .error {
     color: black;
+    background-color: #F6F2EA;
+    border-radius: 25px;
     font-size: 36px;
-    padding: 15% 0;
+    padding: 2%;
     margin: 0 auto;
+    width: 50%;
     text-align: center;
     box-sizing: border-box;
 }
 
+.error > p {
+    font-size: 25px;
+}
 
 
 
@@ -740,8 +754,6 @@ footer input::placeholder {
     font-size: 30px;
     margin-bottom: 5%;
 }
-
-
 table {
     border-collapse: collapse;
     width: 100%;

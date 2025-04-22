@@ -2,6 +2,7 @@
 $title = "Home";
 $description = "Home Page";
 include './templates/header.php';
+
 ?>
 
 
@@ -16,85 +17,45 @@ include './templates/header.php';
         </svg>
     </div>
 
-<section id="BestSellers">
+<section id="TopCards">
     <h2>
-        Best Sellers
+        Top Cards
     </h2>
 
-    <div class="carrossel">
-<!--        <div class="carrossel-arrow-left"></div>-->
-        <div class="carrossel-item">
-            <?php
-//                id of the card
-                $cardID = 0;
-                //Rank of the card
-                $rank = 1;
-                //Suit of the card
-                $suit = "DIAMONDS";
-                //Color of the back of the card
-                $backColor = "gray";
-                //Price of the card
-                $price = 25.00;
-                //card origin date
-                $date = 2025;
-                include './templates/card.php';
-            ?>
-        </div>
-        <div class="carrossel-item">
-            <?php
+    <div class="searchResults">
+        <?php
+        //    get crud access
+        require_once 'crud.php';
+        require_once 'utilites.php';
+        $crud = new crud();
+        $util = new utilites();
 
-//                id of the card
-            $cardID = 0;
-            //Rank of the card
-            $rank = 1;
-            //Suit of the card
-            $suit = "CLUBS";
-            //Color of the back of the card
-            $backColor = "blue";
-            //Price of the card
-            $price = 250.00;
-            //card origin date
-            $date = 2001;
-            include './templates/card.php';
-            ?>
-        </div>
-        <div class="carrossel-item">
-            <?php
 
-//                id of the card
-            $cardID = 0;
-            //Rank of the card
-            $rank = 1;
-            //Suit of the card
-            $suit = "HEARTS";
-            //Color of the back of the card
-            $backColor = "red";
-            //Price of the card
-            $price = 57.00;
-            //card origin date
-            $date = 2015;
-            include './templates/card.php';
-            ?>
-        </div>
-        <div class="carrossel-item">
-            <?php
+        $sql = "SELECT * FROM cards";
+        $sql .= " ORDER BY price DESC LIMIT 3";
+        $results = $crud->read($sql);
+        foreach ($results as $result) {
+//            ID of the card
+            $cardID = $result['cardID'];
+//            Rank of the card
+//            $rank
+            $rank = $util->rankWordToNum($result['rank_num']);
+//            Suit of the card
+//            $suit
+            $suit = $result['suit'];
+//            Color of the back of the card
+//            $backColor
+            $backColor = $result['back_color'];
+//            Price of the card
+//            $price
+            $price = $result['price'];
+//            card origin date
+//            $date
+            $date = $result['year'];
 
-//                id of the card
-            $cardID = 0;
-            //Rank of the card
-            $rank = 1;
-            //Suit of the card
-            $suit = "SPADES";
-            //Color of the back of the card
-            $backColor = "gray";
-            //Price of the card
-            $price = 575.00;
-            //card origin date
-            $date = 2025;
             include './templates/card.php';
-            ?>
-        </div>
-<!--        <div class="carrossel-arrow-right"></div>-->
+        }
+        ?>
     </div>
 </section>
 
