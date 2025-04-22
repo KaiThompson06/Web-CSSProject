@@ -6,7 +6,7 @@ require './templates/header.php';
 ?>
 
 <main>
-    <h2>Thank You For your purchase</h2>
+    <h2>Thank you for your purchase</h2>
 
     <p> We appreciate your business! </p>
 

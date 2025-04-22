@@ -6,8 +6,6 @@ $crud = new crud();
 $validate = new validate();
 session_start();
 
-echo $_POST['submit'];
-
 if (isset($_POST['submit']) && isset($_SESSION['username']))
 {
 
@@ -24,6 +22,7 @@ if (isset($_POST['submit']) && isset($_SESSION['username']))
                 $email = $crud->escape($_POST['email']);
                 $profile_image = $crud->escape($_POST['profile_image']);
                 $isAdmin = $crud->escape($_POST['isAdmin']);
+
                 if ($validate->validUsername($username) && $validate->validEmail($email) && $validate->validImagePath($profile_image) && $validate->validIsAdmin($isAdmin))
                 {
                     $sql = 'UPDATE users SET';
@@ -42,7 +41,7 @@ if (isset($_POST['submit']) && isset($_SESSION['username']))
                 }
                 else
                 {
-                    header("./admin.php?mode=edit&userID=" . $crud->escape($_POST['userID']));
+                    header("location: ./admin.php?mode=edit&userID=" . $crud->escape($_POST['userID']));
                     die();
                 }
                 break;
@@ -57,5 +56,13 @@ if (isset($_POST['submit']) && isset($_SESSION['username']))
                 break;
         }
     }
+    else
+    {
+        header("./admin.php");
+    }
 
+}
+else
+{
+    header("./admin.php");
 }

@@ -3,10 +3,11 @@
 
     <form method="post" enctype="multipart/form-data">
         <label for="fileToUpload">Upload a personalized background image</label>
-        <input type="file" name="fileToUpload" id="fileToUpload" class="hidden">
+        <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit">
     </form>
     <form method="post">
+        <label for="email">Change your email address</label>
         <input type="email" name="email" placeholder="example@email.com">
         <input type="submit">
     </form>

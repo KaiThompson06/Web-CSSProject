@@ -102,6 +102,10 @@ include './templates/header.php';
 
             echo "</table>";
         }
+        else
+        {
+            header('Location: ./login.php');
+        }
     }
 
 

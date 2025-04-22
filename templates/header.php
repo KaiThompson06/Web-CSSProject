@@ -29,6 +29,7 @@
                     <input type="text" name= 'search' placeholder="Search.." >
                 </form>
             </li>
+            <li><a href="about.php">About</a></li>
             <li><a href="profile.php">Profile</a></li>
             <li><a href="cart.php">Cart</a></li>
         </menu>
