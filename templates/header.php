@@ -20,7 +20,7 @@
 <body>
 <!-- add the header -->
 <header>
-    <h1><a href="./index.php">Drawn</a></h1>
+    <h1><img src="./images/logo.jpg" alt="cardLogo" class="logo"><a href="./index.php">Drawn</a></h1>
     <nav class="desktop-nav">
         <menu>
             <li><a href="search.php?search=">Shop</a></li>

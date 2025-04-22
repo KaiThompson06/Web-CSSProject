@@ -91,10 +91,19 @@ header > h1 {
     font-size: 48px;
     font-weight: 100;
     z-index: 100;
+    display: flex;
+    align-items: center;
 }
 header > h1 > a {
     color: white;
     text-decoration: none;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 header > nav > menu
 {
@@ -140,10 +149,8 @@ header nav menu li a {
 {
     header > h1 {
         position: static;
-        width: 100%;
-        transform: none !important;
-        text-align: center;
-        margin: 0 auto;
+        transform: none;
+        justify-content: center;
     }
 
     header nav menu li:nth-child(2) {
