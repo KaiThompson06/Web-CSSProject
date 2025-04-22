@@ -15,7 +15,7 @@
         </div>
         <div>
             <h4>Subscribe to our newsletter</h4>
-            <form action="subscribe.php">
+            <form action="">
                 <input type="text" placeholder="example@gmail.com">
             </form>
         </div>
