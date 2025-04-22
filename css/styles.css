@@ -42,6 +42,7 @@ main > form > input {
 }
 main > form > input::placeholder {
     color: white;
+    opacity: 0.7;
 }
 main > form > label
 {
@@ -753,6 +754,14 @@ footer input::placeholder {
     font-size: 30px;
     margin-bottom: 5%;
 }
+
+
+#profilePage label {
+    background-color: transparent;
+    color: black;
+    width: 100%;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;

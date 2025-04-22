@@ -5,7 +5,7 @@ $title = "My Profile";
 $description = "profile page";
 include './templates/header.php';
 ?>
-<main>
+<main id="profilePage">
     <?php
 //    get current session
     // Check if session is already started

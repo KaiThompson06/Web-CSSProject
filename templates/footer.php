@@ -3,7 +3,7 @@
 <footer>
     <div>
         <div>
-            <a href="./search.php">Shop</a>
+            <a href="./search.php?search=">Shop</a>
             <a href="./profile.php">Profile</a>
             <a href="./admin.php">Admin Controls</a>
         </div>

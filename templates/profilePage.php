@@ -8,7 +8,7 @@
     </form>
     <form method="post">
         <label for="email">Change your email address</label>
-        <input type="email" name="email" placeholder="example@email.com">
+        <input type="email" name="email" placeholder="example@email.com" id="email">
         <input type="submit">
     </form>
     <a href="./logout.php">Logout</a>
